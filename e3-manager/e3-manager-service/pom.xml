@@ -6,6 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>e3-manager-service</artifactId>
+  <packaging>war</packaging>
   <dependencies>
   	<!-- Spring -->
 			<dependency>
@@ -46,5 +47,43 @@
     			<artifactId>e3-manager-dao</artifactId>
     			<version>0.0.1-SNAPSHOT</version>
 			</dependency>
+			
+			<!-- dubbo相关 -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>dubbo</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.zookeeper</groupId>
+				<artifactId>zookeeper</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>com.github.sgroschupf</groupId>
+				<artifactId>zkclient</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-all</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.freemarker</groupId>
+				<artifactId>freemarker</artifactId>
+			</dependency>
   </dependencies>
+   <build>
+  	  <pluginManagement>
+	  		 <plugins>
+	  		 	 <!-- 配置Tomcat插件 -->
+	  		 	 <plugin>
+	  		 	 	 <groupId>org.apache.tomcat.maven</groupId>
+	  		 	 	 <artifactId>tomcat7-maven-plugin</artifactId>
+	  		 	 	 <version>2.2</version>
+	  		 	 	 <configuration>
+	  		 	 	 	 <port>8180</port>
+	  		 	 	 	 <path>/</path>
+	  		 	 	 </configuration>
+	  		 	 </plugin>
+	  		 </plugins>
+  	  </pluginManagement>
+  </build>
 </project>

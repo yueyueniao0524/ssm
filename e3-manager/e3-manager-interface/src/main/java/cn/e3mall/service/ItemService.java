@@ -1,8 +1,11 @@
 package cn.e3mall.service;
 
+import java.util.List;
+import java.util.Map;
+
 import cn.e3mall.pojo.TbItem;
 
 public interface ItemService {
 	
-	TbItem findById(Long itemId);
+	public Map<String, Object> itemList(Integer page, Integer rows);
 }
